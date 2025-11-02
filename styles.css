@@ -1,0 +1,31 @@
+@import url('semantics.css');
+
+h1, h2, p {
+    font-family: var(--font-family);
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: calc(3*var(--font-size-base));
+    font-weight: 400;
+}
+
+h2 {
+    font-size: calc(2*var(--font-size-base));
+    font-weight: 400;
+}
+
+p {
+    font-size: var(--font-size-base);
+}
+
+.white-text {
+    color: var(--text-color-white);
+}
+
+.supporting-text {
+    font-size: calc(0.875*var(--font-size-base));
+    color: var(--text-color-supporting);
+    text-transform: uppercase
+}
+
