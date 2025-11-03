@@ -7,13 +7,29 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="portfolio.css">
     <style>
-      thumb-nail {
+      header {
+        height: 37.5vh;
+      }
+      article {
         display: inline-flex;
         flex-direction: column;
-        border: 2px solid black;
-        padding: 12px;
-        border-radius: 12px;
-        align-items: center;
+        row-gap: 16px;
+        align-items: left;
+        img {
+          border: calc(2*var(--border-width)) solid var(--border-color);
+          border-radius: 16px;
+          width: 100%;
+        }
+
+        hgroup {
+          display: flex;
+          flex-direction: column;
+          row-gap: 8px;
+        }
+        hgroup>p {
+          display: flex;
+          gap: 8px;
+        }
       }
     </style>
   </head>
@@ -40,40 +56,47 @@
       <main>
         <section id="summer-2025-internship">
           <h2 class="supporting-text">Summer 2025 Internship</h2>
-          <a href="storybook_case_study.html">
-          <thumb-nail>
-            <article>
-              <img src="/images/home/StorybookThumb.png" alt="storybook documentation of Arity color palette" width="400" >
-              <h2>Bridging design and development</h2>
-              <p><span>#CrossFunctional</span><span>#Prototyping</span><span>#Coding</span></p>
-            </article>
-          </thumb-nail>
-          </a>
-          <!-- <article>
-            <h3>Informing data platform strategy</h3>
-            <img src="/images/StorybookThumb.png" alt="Data platform research on Mural screenshot" width="400" >
-            <span>#MarketResearch</span>
-            <span>#SelfStructured</span>
-          </article> -->
+          <div class="flex-container">
+            <a href="storybook_case_study.html" class="flex-item">
+              <article>
+                <img src="/images/home/StorybookThumb.png" alt="storybook documentation of Arity color palette" width="400" >
+                <hgroup>
+                  <h2>Bridging design and development</h2>
+                  <p><span>#CrossFunctional</span><span>#Prototyping</span><span>#Coding</span></p>
+                </hgroup>
+              </article>
+            </a>
+            <a href="storybook_case_study.html" class="flex-item">
+              <article>
+                <img src="/images/home/StorybookThumb.png" alt="storybook documentation of Arity color palette" width="400" >
+                <hgroup>
+                  <h2>Bridging design and development</h2>
+                  <p><span>#CrossFunctional</span><span>#Prototyping</span><span>#Coding</span></p>
+                </hgroup>
+              </article>
+            </a>
+          </div>
         </section>
         <section id="previous-work">
           <h2 class="supporting-text">Previous Work</h2>
-          <thumb-nail>
-            <article>
+          <div class="flex-container">
+            <article class="flex-item">
               <img src="/images/home/D4SDThumb.png" alt="Design for San Diego website homepage picture" width="400">
-              <h2>Challenging the housing crisis</h2>
-              <p><span>#VisualDesign</span><span>#BrandStrategy</span><span>#CrossFunctional</span></p>
+              <hgroup>
+                <h2>Challenging the housing crisis</h2>
+                <p><span>#VisualDesign</span><span>#BrandStrategy</span><span>#CrossFunctional</span></p>
+              </hgroup>
             </article>
-          </thumb-nail>
-          <a href="yfm_case_study.html">
-            <thumb-nail>
+            <a href="yfm_case_study.html" class="flex-item">
               <article>
                 <img src="/images/home/YFMThumb.png" alt="Youth Futures Movement nonprofit homepage picture" width="400">
-                <h2>Defining nonprofit branding</h2>
-                <p><span>#StakeholderRelations</span><span>#BrandStrategy</span><span>#UserResearch</span></p>
+                <hgroup>
+                  <h2>Defining nonprofit branding</h2>
+                  <p><span>#StakeholderRelations</span><span>#BrandStrategy</span><span>#UserResearch</span></p>
+                </hgroup>
               </article>
-            </thumb-nail>
-          </a>
+            </a>
+          </div>
         </section>
       </main>
 
