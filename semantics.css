@@ -5,8 +5,8 @@
     --bg-color: #F9FBFF;
     --nav-bg-color: #FFFFFF;
     --text-color: #121313;
-    --text-color-white: #FFFFFF;
-    --heading-color-supporting: rgb(249 251 255,0.48);
+    --text-color-white: #E5E5E5;
+    --heading-color-supporting: rgba(249, 251, 255,0.48);
     --text-color-supporting: #636060;
     --border-color: #121313;
     --border-width: 0.5px;
@@ -15,4 +15,17 @@
     --font-size-base: 1rem;
     --width-spacing-unit: 1.6dvw;
     --height-spacing-unit: 1.6dvh;
+
+    @font-face {
+        font-family: 'Roboto';
+        /* The src declaration points to your single font file */
+        src: url('fonts/Roboto-VariableFont_wdth,wght.ttf') format('truetype-variations'),
+            url('fonts/Roboto-VariableFont_wdth,wght.ttf') format('truetype'); /* Fallback for some browsers */
+        
+        /* Define the range of weights the font supports */
+        font-weight: 100 900; 
+        
+        font-style: normal;
+        font-display: swap; /* Best practice for performance */
+    }
 }
