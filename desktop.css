@@ -39,6 +39,11 @@ body {
                 visibility: visible;
             }
         }
+        &:hover {
+            ul {
+                visibility: visible;
+            }
+        }
     }
 
     .content {
