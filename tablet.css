@@ -1,0 +1,224 @@
+@import url('styles.css');
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color,#F9FBFF);
+    writing-mode: horizontal-tb;
+    
+    .navbar {
+        height: auto;
+        width: 100vw;
+        border: var(--border-width,0.5px) solid var(--border-color,#121313);
+        position: sticky;
+        top: 0;
+
+        button {
+            height: auto;
+            width: calc(4*var(--width-spacing-unit,1.6dvw));
+            background: none;
+            border: none;
+            cursor: pointer;
+            svg {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* ul {
+            display: none;
+        }
+
+        &:hover {
+            ul {
+                display: block;
+            }
+        } */
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        figure {
+            margin: 0;
+            border: var(--border-width,0.5px) solid var(--border-color,#121313);
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        header[data-page="home"] {
+            height: 37.5vh;
+            padding-inline: calc(2*var(--width-spacing-unit,1.6dvw));
+            padding-block: var(--height-spacing-unit,1.6dvh);
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            border: var(--border-width,0.5px) solid var(--border-color,#121313);
+        }
+
+        header[data-page="case-study"] {
+            padding-inline: calc(2*var(--width-spacing-unit,1.6dvw));
+            padding-block: calc(2*var(--height-spacing-unit,1.6dvh));
+            justify-content: flex-start;
+            align-items: center;
+            color: var(--text-color-white,#FFFFFF);
+            background-color: var(--primary-color,#282787);
+            display: grid;
+            grid-template-columns: repeat(8,1fr);
+            grid-column-gap: var(--width-spacing-unit,1.6dvw);
+            grid-row-gap: calc(2*var(--height-spacing-unit,1.6dvh));
+            grid-template-areas: 
+                ". titles titles titles titles titles titles ."
+                ". goal-deliverable goal-deliverable goal-deliverable skill-time skill-time skill-time .";
+
+            hgroup {
+                display: flex;
+                flex-direction: column;
+                gap: calc(0.5*var(--height-spacing-unit,1.6dvh));
+                grid-area: titles;
+
+                h1 {
+                    color: var(--text-color-white,#FFFFFF);
+                }
+            }
+
+            #goal-deliverable-container {
+                grid-area: goal-deliverable;
+                display: flex;
+                flex-direction: column;
+                gap: calc(2*var(--height-spacing-unit,1.6dvh));
+                
+                section {
+                    display: flex;
+                    flex-direction: column;
+                    gap: calc(0.5*var(--height-spacing-unit,1.6dvh));
+                }
+            }
+
+            #skills-time-container {
+                grid-area: skill-time;
+                display: flex;
+                flex-direction: column;
+                gap: calc(2*var(--height-spacing-unit,1.6dvh));
+                
+                section {
+                    display: flex;
+                    flex-direction: column;
+                    gap: calc(0.5*var(--height-spacing-unit,1.6dvh));
+                }
+            }
+
+            #goal {
+                grid-area: goal;
+            }
+
+            #deliverable {
+                grid-area: deliverable;
+            }
+
+            #skills {
+                grid-area: skills;
+            }
+
+            #time-spent {
+                grid-area: time;
+            }
+        }
+
+        main {
+            section {
+                padding-inline: calc(2*var(--width-spacing-unit,1.6dvw));
+                padding-block: var(--height-spacing-unit,1.6dvh);
+                border: var(--border-width,0.5px) solid var(--border-color,#121313);
+
+                div {
+                    padding-block: var(--height-spacing-unit,1.6dvh);
+                    display: flex;
+                    column-gap: var(--width-spacing-unit,1.6dvw);
+                    row-gap: calc(2*var(--height-spacing-unit,1.6dvh));
+                    flex-direction: column;
+                }
+            }
+
+            section[data-page="case-study"] {
+                display: grid;
+                grid-template-columns: repeat(8,1fr);
+                grid-template-rows: auto auto auto;
+                grid-column-gap: var(--width-spacing-unit,1.6dvw);
+                grid-row-gap: var(--height-spacing-unit,1.6dvh);
+                grid-template-areas: 
+                    ". h2 h2 h2 h2 h2 h2 ."
+                    ". p p p p p p ."
+                    ". strong strong strong strong . . .";
+                border: none;
+                h2 {
+                    grid-area: h2;
+                }
+
+                p {
+                    grid-area: p;
+                }
+
+                strong {
+                    grid-area: strong;
+                }
+            }
+
+            figure {
+                display: grid;
+                grid-template-columns: repeat(8,1fr);
+                grid-template-rows: auto auto;
+                grid-column-gap: var(--width-spacing-unit,1.6dvw);
+                grid-row-gap: calc(var(--height-spacing-unit,1.6dvh));
+                grid-template-areas:
+                    ". img img img img img img ."
+                    ". figcaption figcaption figcaption figcaption figcaption . .";
+
+                padding-inline: calc(2*var(--width-spacing-unit,1.6dvw));
+                padding-block: var(--height-spacing-unit,1.6dvh);
+                border: none;
+
+                img {
+                    grid-area: img;
+                }
+
+                figcaption {
+                    grid-area: figcaption;
+                    display: flex;
+                    flex-direction: column;
+                    gap: calc(0.5*var(--height-spacing-unit,1.6dvh));
+                }
+            }
+        }
+
+        main[data-page="case-study"] {
+            border: var(--border-width,0.5px) solid var(--border-color,#121313);
+        }
+        
+        footer {
+            padding-inline: calc(2*var(--width-spacing-unit,1.6dvw));
+            padding-block: calc(1.5*var(--height-spacing-unit,1.6dvh));
+            border: var(--border-width,0.5px) solid var(--border-color,#121313);
+            nav ul {
+                display: flex;
+                gap: 40px;
+            }
+        }
+    }
+
+    
+}

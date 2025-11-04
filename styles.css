@@ -3,11 +3,12 @@
 html {
     font-family: var(--font-family, 'Roboto', 'sans-serif');
 }
-h1, h2, p {
+h1, h2, h3, p, em {
     color: var(--text-color,#121313);
 }
 
 h1 {
+    margin: 0px;
     font-size: calc(3*var(--font-size-base,1rem));
     font-weight: 400;
 }
@@ -18,9 +19,27 @@ h2 {
     font-weight: 400;
 }
 
+h3 {
+    /* Default is supporting text style */
+    margin: 0px;
+    font-size: calc(0.875*var(--font-size-base,1rem));
+    color: var(--text-color-supporting,#636060);
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    font-weight: 400;
+}
+
 p {
     margin: 0px;
     font-size: var(--font-size-base,1rem);
+}
+
+em {
+    font-style: normal;
+}
+
+a {
+    color: inherit;
 }
 
 .white-text {
@@ -32,11 +51,13 @@ p {
     color: var(--text-color-supporting,#636060);
     text-transform: uppercase;
     letter-spacing: 0.2px;
+    font-weight: 400;
 }
 
-a {
-    color: inherit;
+.blue-bg {
+    color: var(--heading-color-supporting,rgba(249, 251, 255,0.48));
 }
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(12,1fr);
@@ -53,4 +74,10 @@ a {
 
 .flex-item {
     flex: 1;
+}
+
+.scroller {
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+    scrollbar-color: var(--border-color,#121313) transparent;
 }

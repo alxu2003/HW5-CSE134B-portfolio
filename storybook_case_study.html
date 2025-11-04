@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroller">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Alex Xu's Portfolio</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="mobile.css" />
+    <link rel="stylesheet" media="screen and (min-width: 769px) and (max-width: 1024px)" href="tablet.css" />
+    <link rel="stylesheet" media="screen and (min-width: 1025px)" href="desktop.css" />
     <style>
     
     </style>
@@ -17,11 +19,11 @@
         <path d="M4 8H28V10.6667H4V8ZM4 14.6667H28V17.3333H4V14.6667ZM4 21.3333H28V24H4V21.3333Z" fill="#121313"/>
         </svg>
       </button>
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="about_me.html">About me</a></li>
-          <li><a href="experiment.html">Experiments</a></li>
-        </ul>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about_me.html">About me</a></li>
+        <li><a href="experiment.html">Experiments</a></li>
+      </ul>
     </nav>
     <div class="content">
       <figure>
@@ -29,31 +31,35 @@
           <source srcset="/images/storybook/StorybookBanner-2x.png" media="(width >= 2880px)"/>
           <img src="/images/storybook/StorybookBanner-1x.png" alt="storybook banner" />
         </picture>
-        <header>
+        <header data-page="case-study">
           <hgroup>
             <h1>Bridging design and development</h1>
-            <h2>Arity, an Allstate Company</h2>
+            <h2 class="blue-bg">Arity, an Allstate Company</h2>
           </hgroup>
-          <section id="goal">
-            <h3>Goal</h3>
-            <p>Keeping developers updated on the latest changes to the Arity Web Foundations.</p>
-          </section>
-          <section id="skills">
-            <h3>Skills</h3>
-            <p>React/Typescript<br>Github<br>Figma<br>Storybook</p>
-          </section>
-          <section id="deliverable">
-            <h3>Deliverable</h3>
-            <p>ColorPalette page<br>Typography page</p>
-          </section>
-          <section id="time-spent">
-            <h3>Time spent</h3>
-            <p>About 2 weeks</p>
-          </section>
+          <div id="goal-deliverable-container">
+            <section id="goal">
+              <h3 class="blue-bg">Goal</h3>
+              <p class="white-text">Keeping developers updated on the latest changes to the Arity Web Foundations.</p>
+            </section>
+            <section id="deliverable">
+            <h3 class="blue-bg">Deliverable</h3>
+            <p class="white-text">ColorPalette page<br>Typography page</p>
+            </section>
+          </div>
+          <div id="skills-time-container">
+            <section id="skills">
+              <h3 class="blue-bg">Skills</h3>
+              <p class="white-text">React/Typescript<br>Github<br>Figma<br>Storybook</p>
+            </section>
+            <section id="time-spent">
+                <h3 class="blue-bg">Time spent</h3>
+                <p class="white-text">About 2 weeks</p>
+            </section>
+          </div>
         </header>
       </figure>
-      <main>
-        <section>
+      <main data-page="case-study">
+        <section data-page="case-study">
           <p>Storybook is an open-source tool for developing, documenting, and testing UI components in isolation. It’s widely used in frontend development to create a <i>living style guide</i> of components, making it easier for teams to build consistent, reusable, and well-documented design systems. I was tasked with ensuring design-to-dev alignment by updating the Storybook with the new Colors and Type from Arity’s design system.</p>
           <strong>This was a solo project.</strong>
         </section>
@@ -62,7 +68,7 @@
           <figcaption>
             <b>Arity Colors</b>
             <p>I created the Colors page using MD and JS with some HTML/CSS, making sure colors on the 900 to 100 scale were comparable vertically.</p>
-            <em>Created by me</em>
+            <em class="supporting-text">Created by me</em>
           </figcaption>
         </figure>
       </main>
