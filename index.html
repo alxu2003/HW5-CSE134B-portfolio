@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="scroller">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Alex Xu's Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="mobile.css" />
+    <link rel="stylesheet" media="screen and (min-width: 769px) and (max-width: 1024px)" href="tablet.css" />
+    <link rel="stylesheet" media="screen and (min-width: 1025px)" href="desktop.css" />
+    <style>
+      article {
+        display: inline-flex;
+        flex-direction: column;
+        row-gap: 16px;
+        align-items: left;
+        width: 100%;
+        /* overflow: hidden; */
+        box-sizing: border-box;
+
+        &:hover {
+          img {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+          }
+        }
+        
+        img {
+          transition: transform 0.3s ease;
+          border: calc(2*var(--border-width)) solid var(--border-color);
+          border-radius: 16px;
+          width: 100%;
+        }
+
+        hgroup {
+          display: flex;
+          flex-direction: column;
+          row-gap: 8px;
+        }
+        hgroup>p {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+    <nav class="navbar">
+      <button> 
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 8H28V10.6667H4V8ZM4 14.6667H28V17.3333H4V14.6667ZM4 21.3333H28V24H4V21.3333Z" fill="#121313"/>
+        </svg>
+      </button>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <!-- <li><a href="about_me.html">About me</a></li> -->
+        <li><a href="experiment.html">Experiments</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <header data-page="home">
+        <h1>Alex is a product designer. Blah Blah.</h1>
+      </header>
+
+      <main>
+        <section id="summer-2025-internship">
+          <h2 class="supporting-text">Summer 2025 Internship</h2>
+          <div>
+            <a href="storybook_case_study.html" class="flex-item">
+              <article>
+                <img src="/images/home/StorybookThumb.png" alt="storybook documentation of Arity color palette" width="400" >
+                <hgroup>
+                  <h2>Bridging design and development</h2>
+                  <p><span>#CrossFunctional</span><span>#Prototyping</span><span>#Coding</span></p>
+                </hgroup>
+              </article>
+            </a>
+            <a href="storybook_case_study.html" class="flex-item">
+              <article>
+                <img src="/images/home/StorybookThumb.png" alt="storybook documentation of Arity color palette" width="400" >
+                <hgroup>
+                  <h2>Bridging design and development</h2>
+                  <p><span>#CrossFunctional</span><span>#Prototyping</span><span>#Coding</span></p>
+                </hgroup>
+              </article>
+            </a>
+          </div>
+        </section>
+        <section id="previous-work">
+          <h2 class="supporting-text">Previous Work</h2>
+          <div>
+            <article class="flex-item">
+              <img src="/images/home/D4SDThumb.png" alt="Design for San Diego website homepage picture" width="400">
+              <hgroup>
+                <h2>Challenging the housing crisis</h2>
+                <p><span>#VisualDesign</span><span>#BrandStrategy</span><span>#CrossFunctional</span></p>
+              </hgroup>
+            </article>
+            <a class="flex-item">
+              <article>
+                <img src="/images/home/YFMThumb.png" alt="Youth Futures Movement nonprofit homepage picture" width="400">
+                <hgroup>
+                  <h2>Defining nonprofit branding</h2>
+                  <p><span>#StakeholderRelations</span><span>#BrandStrategy</span><span>#UserResearch</span></p>
+                </hgroup>
+              </article>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <nav>
+          <ul>
+            <li><a href="/images/AlexXuResume2025.pdf" target="_blank">Resume</a></li>
+            <li><a href="https://www.linkedin.com/in/alex-liaoxing-xu/" target="_blank">Linkedin</a></li>
+            <li><a href="mailto:alxu2003@gmail.com">Email</a></li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+    <script>
+      // Define a custom element that only logs to the console.
+      class HelloWorld extends HTMLElement {
+        connectedCallback() {
+          // Only logging — no DOM changes.
+          console.log('Hello world!');
+        }
+      }
+
+      // Register the element. Name must include a hyphen.
+      customElements.define('hello-world', HelloWorld);
+    </script>
+    <hello-world></hello-world>
+    <noscript>
+      <h1>Welcome! JavaScript is disabled in your browser.</h1>
+      <p>Please enable JavaScript for the best experience.</p>
+    </noscript>
+  </body>
+</html>
