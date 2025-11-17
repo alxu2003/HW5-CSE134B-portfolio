@@ -60,6 +60,19 @@ body {
             }
         }
 
+        hgroup {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          gap: calc(0.5*var(--height-spacing-unit,1.6dvh));
+
+          p {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+          }
+        }
+
         header[data-page="home"] {
             height: 37.5vh;
             padding-inline: calc(2*var(--width-spacing-unit,1.6dvw));
@@ -86,9 +99,6 @@ body {
                 ". goal-deliverable goal-deliverable goal-deliverable skill-time skill-time skill-time .";
 
             hgroup {
-                display: flex;
-                flex-direction: column;
-                gap: calc(0.5*var(--height-spacing-unit,1.6dvh));
                 grid-area: titles;
 
                 h1 {
@@ -140,6 +150,9 @@ body {
         }
 
         main {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
             section {
                 padding-inline: calc(2*var(--width-spacing-unit,1.6dvw));
                 padding-block: var(--height-spacing-unit,1.6dvh);
