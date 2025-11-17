@@ -2,6 +2,8 @@
     /* Colors */
     --primary-color: #282787;
     /* --secondary-color: #2ecc71; */
+    --system-error-color: rgba(218, 134, 147);
+    --system-focus-color: rgba(189, 218, 134, 0.8);
     --bg-color: #F9FBFF;
     --nav-bg-color: #FFFFFF;
     --text-color: #121313;
