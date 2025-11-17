@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="scroller">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Contact Form - No JS</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="mobile.css" />
+    <link rel="stylesheet" media="screen and (min-width: 769px) and (max-width: 1024px)" href="tablet.css" />
+    <link rel="stylesheet" media="screen and (min-width: 1025px)" href="desktop.css" />
+    <link rel="stylesheet" href="form.css" />
+    <style>
+      /* Additional styles specific to no-JS version can go here */
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <button> 
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 8H28V10.6667H4V8ZM4 14.6667H28V17.3333H4V14.6667ZM4 21.3333H28V24H4V21.3333Z" fill="#121313"/>
+        </svg>
+      </button>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <!-- <li><a href="about_me.html">About me</a></li> -->
+        <li><a href="experiment.html">Experiments</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <main>
+        <section data-page="contact-form">
+          <hgroup>
+            <h2>Send me a message!</h2>
+            <p>Want to work together, or just chat? I'd love to hear from you.</p>
+          </hgroup>
+          <form action="https://httpbin.org/post" method="post" enctype="application/x-www-form-urlencoded">
+            <fieldset>
+              <legend><h3>Contact Form</h3></legend>
+              <div>      
+                  <label for="first-name">
+                    <p>First Name:*</p>
+                    <input 
+                      type="text" 
+                      id="first-name" 
+                      class="unfilled"
+                      name="first-name" 
+                      placeholder="e.g. John" 
+                      maxlength="50" 
+                      pattern="[A-Za-z0-9 \-]+" 
+                      title="Please enter only letters, spaces, hyphens, and apostrophes."
+                      
+                      >
+                  </label>
+                  <label for="last-name">
+                    <p>Last Name:*</p>
+                    <input 
+                      type="text" 
+                      id="last-name" 
+                      name="last-name" 
+                      placeholder="e.g. Doe" 
+                      maxlength="50" 
+                      pattern="[A-Za-z0-9 \-]+" 
+                      title="Please enter only letters, spaces, hyphens, and apostrophes."
+                      required
+                      >
+                  </label>
+              </div>
+              <label for="email">
+                <p>Email:*</p>
+                <input type="email" id="email" name="email" placeholder="e.g. john.doe@address.com" required>
+              </label>
+            </fieldset>
+            <label for="comments">
+              <p>Your message:*</p>
+              <textarea 
+                id="comments" 
+                name="comments" 
+                rows="4" cols="50" 
+                placeholder="Type your message here..."
+                maxlength="300"
+                required
+                ></textarea>
+            </label> 
+            <!-- Honeypot field to deter bots -->
+            <input type="hidden" name="possible_bot" value="true">
+            <output for='email' id="error" name="error">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 17H22V15H20V17ZM20 7V13H22V7H20ZM11 9H16.5L11 3.5V9ZM4 2H12L18 8V20C18 21.11 17.11 22 16 22H4C3.46957 22 2.96086 21.7893 2.58579 21.4142C2.21071 21.0391 2 20.5304 2 20V4C2 2.89 2.89 2 4 2ZM13 18V16H4V18H13ZM16 14V12H4V14H16Z" fill="black"/>
+              </svg>
+              One or more fields are missing or incorrect.
+            </output>
+            <output for="comments" id="info" name="info">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.5 16.5H12.5V11H11.5V16.5ZM12 9.577C12.1747 9.577 12.321 9.518 12.439 9.4C12.557 9.282 12.6157 9.13567 12.615 8.961C12.6143 8.78633 12.5553 8.64033 12.438 8.523C12.3207 8.40567 12.1747 8.34667 12 8.346C11.8253 8.34533 11.6793 8.40433 11.562 8.523C11.4447 8.64167 11.3857 8.788 11.385 8.962C11.3843 9.136 11.4433 9.282 11.562 9.4C11.6807 9.518 11.8267 9.577 12 9.577ZM12.003 21C10.7583 21 9.58833 20.764 8.493 20.292C7.39767 19.8193 6.44467 19.178 5.634 18.368C4.82333 17.558 4.18167 16.606 3.709 15.512C3.23633 14.418 3 13.2483 3 12.003C3 10.7577 3.23633 9.58767 3.709 8.493C4.181 7.39767 4.82133 6.44467 5.63 5.634C6.43867 4.82333 7.391 4.18167 8.487 3.709C9.583 3.23633 10.753 3 11.997 3C13.241 3 14.411 3.23633 15.507 3.709C16.6023 4.181 17.5553 4.82167 18.366 5.631C19.1767 6.44033 19.8183 7.39267 20.291 8.488C20.7637 9.58333 21 10.753 21 11.997C21 13.241 20.764 14.411 20.292 15.507C19.82 16.603 19.1787 17.556 18.368 18.366C17.5573 19.176 16.6053 19.8177 15.512 20.291C14.4187 20.7643 13.249 21.0007 12.003 21Z" fill="black"/>
+              </svg>
+              Please fill out all fields to submit.
+            </output>
+            <input type="submit" value="Submit">
+          </form>
+        </section>
+      </main>
+      <footer>
+        <nav>
+          <ul>
+            <li><a href="/images/AlexXuResume2025.pdf" target="_blank">Resume</a></li>
+            <li><a href="https://www.linkedin.com/in/alex-liaoxing-xu/" target="_blank">Linkedin</a></li>
+            <li><a href="mailto:alxu2003@gmail.com">Email</a></li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+    <script src="form.js"></script>
+  </body>
+</html>
