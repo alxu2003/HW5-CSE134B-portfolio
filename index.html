@@ -49,23 +49,23 @@
   </head>
   
   <body>
-    <nav class="navbar">
-			<div>
-				<button> 
-        <svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M0 8H24V10.6667H0V8ZM0 14.6667H24V17.3333H0V14.6667ZM0 21.3333H24V24H0V21.3333Z" fill="var(--border-color)"/>
-				</svg>
-
-				</button>
-				<ul>
-					<li><a href="home.html">Home</a></li>
-					<!-- <li><a href="about_me.html">About me</a></li> -->
-					<li><a href="experiment.html">Experiments</a></li>
-          <li><a href='form-no-js.html'>Form-no-js</a></li>
-          <li><a href='form-with-js.html'>Form-with-js</a></li>
-
-				</ul>
-			</div>
+    
+    <nav id="navbar">
+			
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <!-- <li><a href="about_me.html">About me</a></li> -->
+        <li><a href="experiment.html">Experiments</a></li>
+        <li><a href='form-no-js.html'>Form-no-js</a></li>
+        <li><a href='form-with-js.html'>Form-with-js</a></li>
+      </ul>
+      <div class="closed-nav">
+        <label id="nav-button">
+          <input id="nav-check" type="checkbox">
+          <svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 8H24V10.6667H0V8ZM0 14.6667H24V17.3333H0V14.6667ZM0 21.3333H24V24H0V21.3333Z" fill="var(--border-color)"/>
+          </svg>
+        </label>
       
       <div id="theme-switch">
 				
@@ -78,13 +78,12 @@
 				</svg>
 				
 
-				<label class="switch">
-					<input id="theme-check" type="checkbox">
-					<span class="slider round">
-					</span>
-				</label>
-			</div>
-			
+          <label class="switch">
+            <input id="theme-check" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
     </nav>
 
     <div class="content">
