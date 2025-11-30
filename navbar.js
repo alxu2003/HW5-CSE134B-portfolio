@@ -20,4 +20,11 @@ themeSwitch.addEventListener('input', () => {
     checked = localStorage.getItem('checked');
     darkmode != 'active' ? enableDarkMode() : disableDarkMode();
     checked != 'active' ? themeSwitch.checked = true : themeSwitch.checked = false;
-})  
+});
+
+const navSwitch = document.getElementById('nav-check');
+const navBar = document.getElementById('navbar');
+
+navSwitch.addEventListener('input', () => {
+    navSwitch.checked ? navBar.style.width = '32dvw' : navBar.style.width = 'var(--nav-short-end-size)';
+})

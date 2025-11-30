@@ -46,6 +46,9 @@ body {
         border: var(--border-width,0.5px) solid var(--border-color,#121313);
         position: fixed;
         box-sizing: content-box;
+        background-color: var(--nav-bg-color);
+        z-index: 1;
+        transition: 0.4s;
 
 
         #closed-nav {
@@ -156,9 +159,17 @@ body {
             width: auto;
             z-index: -1;
 
+            li{
+                min-width: 0;
+
+            }
+
             a {
                 padding: var(--height-spacing-unit) calc(2*var(--width-spacing-unit));
                 font-size: calc(2*var(--font-size-base,1rem));
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
         
