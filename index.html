@@ -9,43 +9,7 @@
     <link rel="stylesheet" media="screen and (min-width: 769px) and (max-width: 1024px)" href="tablet.css" />
     <link rel="stylesheet" media="screen and (min-width: 1025px)" href="desktop.css" />
     <script type="text/javascript" src="navbar.js" defer></script>
-    <style>
-      article {
-        display: inline-flex;
-        flex-direction: column;
-        row-gap: 16px;
-        align-items: left;
-        width: 100%;
-        /* overflow: hidden; */
-        box-sizing: border-box;
-
-        &:hover {
-          img {
-            transform: scale(1.02);
-            transition: transform 0.3s ease;
-          }
-        }
-        
-        img {
-          transition: transform 0.3s ease;
-          border: calc(2*var(--border-width)) solid var(--border-color);
-          border-radius: 16px;
-          width: 100%;
-        }
-
-        hgroup {
-          display: flex;
-          flex-direction: column;
-          gap: calc(0.5*var(--height-spacing-unit,1.6dvh));
-
-          p {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-          }
-        }
-      }
-    </style>
+    <script type="module" src="project-card.js"></script>
   </head>
   
   <body>
@@ -59,6 +23,10 @@
         <!-- <li><a href='form-no-js.html'>Form-no-js</a></li> -->
         <li><a href='form-with-js.html'>Form-with-js</a></li>
       </ul>
+      <div id="load-btns">
+          <button id="load-remote"><h3>Load Remote</h3></button>
+          <button id="load-local"><h3>Load Local</h3></button>
+        </div>
       <div id="closed-nav">
         <label id="nav-button">
           <input id="nav-check" type="checkbox">
@@ -92,45 +60,19 @@
         <section id="summer-2025-internship">
           <h2 class="supporting-text">Summer 2025 Internship</h2>
           <div>
-            <a id='story-thumb' href="storybook_case_study.html" class="flex-item">
-              <article>
-                <img src="/images/home/StorybookThumb.png" alt="storybook documentation of Arity color palette" width="400" >
-                <hgroup>
-                  <h2>Bridging design and development</h2>
-                  <p><span>#CrossFunctional</span><span>#Prototyping</span><span>#Coding</span></p>
-                </hgroup>
-              </article>
-            </a>
-            <a href="storybook_case_study.html" class="flex-item">
-              <article>
-                <img src="/images/home/StorybookThumb.png" alt="storybook documentation of Arity color palette" width="400" >
-                <hgroup>
-                  <h2>Bridging design and development</h2>
-                  <p><span>#CrossFunctional</span><span>#Prototyping</span><span>#Coding</span></p>
-                </hgroup>
-              </article>
-            </a>
+            <project-card anchor-url="storybook_case_study.html" pic-src="./images/home/StorybookThumb" pic-alt="storybook documentation of Arity color palette"
+              heading="Bridging design and development" keywords="Cross Functional, prototyping, coding" caption="I worked across dev and design teams to standardize Arity web styling."></project-card>
+              <project-card anchor-url="storybook_case_study.html" pic-src="./images/home/StorybookThumb" pic-alt="storybook documentation of Arity color palette"
+              heading="Bridging design and development" keywords="Cross Functional, prototyping, coding" caption="I worked across dev and design teams to standardize Arity web styling."></project-card>
           </div>
         </section>
         <section id="previous-work">
           <h2 class="supporting-text">Previous Work</h2>
           <div>
-            <article class="flex-item">
-              <img src="/images/home/D4SDThumb.png" alt="Design for San Diego website homepage picture" width="400">
-              <hgroup>
-                <h2>Challenging the housing crisis</h2>
-                <p><span>#VisualDesign</span><span>#BrandStrategy</span><span>#CrossFunctional</span></p>
-              </hgroup>
-            </article>
-            <a class="flex-item">
-              <article>
-                <img src="/images/home/YFMThumb.png" alt="Youth Futures Movement nonprofit homepage picture" width="400">
-                <hgroup>
-                  <h2>Defining nonprofit branding</h2>
-                  <p><span>#StakeholderRelations</span><span>#BrandStrategy</span><span>#UserResearch</span></p>
-                </hgroup>
-              </article>
-            </a>
+            <project-card pic-src="./images/home/D4SDThumb" pic-alt="Design for San Diego website homepage picture"
+              heading="Challenging the housing crisis" keywords="Visual Design, Brand Strategy, Cross Functional" caption="I led the creation of the D4SD 2024 website."></project-card>
+            <project-card pic-src="./images/home/YFMThumb" pic-alt="Youth Futures Movement nonprofit homepage picture"
+              heading="Defining nonprofit branding" keywords="Stakeholder Relations, Brand Strategy, User Research" caption="I worked with Youth Futures Movement on a branding redesign."></project-card>
           </div>
         </section>
       </main>
