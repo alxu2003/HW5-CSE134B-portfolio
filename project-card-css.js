@@ -10,17 +10,21 @@ export function projectCardCSS() {
                 box-sizing: border-box;
 
                 &:hover {
-                img {
+                picture {
                     transform: scale(1.02);
                     transition: transform 0.3s ease;
                 }
                 }
                 
-                img {
+                picture {
                 transition: transform 0.3s ease;
                 border: calc(2*var(--border-width)) solid var(--border-color);
                 border-radius: 16px;
+                img{
                 width: 100%;
+                }
+                overflow: hidden;
+                height: 28vh;
                 }
 
                 hgroup {
@@ -40,7 +44,7 @@ export function projectCardCSS() {
                     span{
                     font-size: calc(0.75*var(--base-font-size,16px));
                     background-color: #303E5B;
-                    color: var(--bg-color);
+                    color: #F9FBFF;
                     padding-inline: calc(0.4*var(--width-spacing-unit,1.6dvw));
                     padding-block: calc(0.4*var(--height-spacing-unit,1.6dvh));
                     border-radius: 4px;
