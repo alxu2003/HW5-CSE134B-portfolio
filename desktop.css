@@ -125,6 +125,20 @@ body {
                     height: 0;
                     position: fixed;
                 }
+
+                svg {
+                    aspect-ratio: 1/1;
+                    width: 100%;
+                }
+                .close {
+                    display: none;
+                }
+                input:checked + .hamburger {
+                    display: none;
+                }
+                input:checked ~ .close {
+                    display: block;
+                }
             }
 
             #theme-switch {
@@ -220,6 +234,7 @@ body {
         flex-direction: column;
         flex-grow: 1;
         margin-left: var(--nav-short-end-size);
+        height: 100vh;
 
         figure {
             margin: 0;
@@ -233,7 +248,7 @@ body {
         }
 
         header[data-page="home"] {
-            height: 37.5vh;
+            min-height: 37.5vh;
             padding-inline: calc(2*var(--width-spacing-unit,1.6dvw));
             padding-block: var(--height-spacing-unit,1.6dvh);
             display: flex;
