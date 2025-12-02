@@ -30,9 +30,13 @@
       <div id="closed-nav">
         <label id="nav-button">
           <input id="nav-check" type="checkbox">
-          <svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="hamburger" width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 8H24V10.6667H0V8ZM0 14.6667H24V17.3333H0V14.6667ZM0 21.3333H24V24H0V21.3333Z" fill="var(--border-color)"/>
           </svg>
+          <svg class="close" width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1956 2.86182L13.1385 3.80463L8.94315 7.99988L13.1385 12.1952L12.1956 13.138L8.00037 8.94266L3.80512 13.138L2.8623 12.1952L7.05755 7.99988L2.8623 3.80463L3.80512 2.86182L8.00037 7.05707L12.1956 2.86182Z" fill="black"/>
+          </svg>
+
         </label>
       
         <div id="theme-switch">
@@ -58,21 +62,20 @@
 
       <main>
         <section id="summer-2025-internship">
-          <h2 class="supporting-text">Summer 2025 Internship</h2>
-          <div>
-            <project-card anchor-url="storybook_case_study.html" pic-src="./images/home/StorybookThumb" pic-alt="storybook documentation of Arity color palette"
-              heading="Bridging design and development" keywords="Cross Functional, prototyping, coding" caption="I worked across dev and design teams to standardize Arity web styling."></project-card>
-              <project-card anchor-url="storybook_case_study.html" pic-src="./images/home/StorybookThumb" pic-alt="storybook documentation of Arity color palette"
-              heading="Bridging design and development" keywords="Cross Functional, prototyping, coding" caption="I worked across dev and design teams to standardize Arity web styling."></project-card>
+          <h2 class="supporting-text">Remote results</h2>
+          <div id="projects-remote">
+            <!-- 
+              <project-card anchor-url="storybook_case_study.html" pic-src="./images/home/StorybookThumb-2x.png" pic-alt="storybook documentation of Arity color palette"
+              heading="Bridging design and development" keywords="Cross Functional, prototyping, coding" caption="I worked across dev and design teams to standardize Arity web styling."></project-card> -->
           </div>
         </section>
         <section id="previous-work">
-          <h2 class="supporting-text">Previous Work</h2>
-          <div>
-            <project-card pic-src="./images/home/D4SDThumb" pic-alt="Design for San Diego website homepage picture"
+          <h2 class="supporting-text">Local results</h2>
+          <div id="projects-local">
+            <!-- <project-card pic-src="./images/home/D4SDThumb-2x.png" pic-alt="Design for San Diego website homepage picture"
               heading="Challenging the housing crisis" keywords="Visual Design, Brand Strategy, Cross Functional" caption="I led the creation of the D4SD 2024 website."></project-card>
-            <project-card pic-src="./images/home/YFMThumb" pic-alt="Youth Futures Movement nonprofit homepage picture"
-              heading="Defining nonprofit branding" keywords="Stakeholder Relations, Brand Strategy, User Research" caption="I worked with Youth Futures Movement on a branding redesign."></project-card>
+            <project-card pic-src="./images/home/YFMThumb-2x.png" pic-alt="Youth Futures Movement nonprofit homepage picture"
+              heading="Defining nonprofit branding" keywords="Stakeholder Relations, Brand Strategy, User Research" caption="I worked with Youth Futures Movement on a branding redesign."></project-card> -->
           </div>
         </section>
       </main>
@@ -88,16 +91,76 @@
       </footer>
     </div>
     <script>
-      // Define a custom element that only logs to the console.
-      class HelloWorld extends HTMLElement {
-        connectedCallback() {
-          // Only logging — no DOM changes.
-          console.log('Hello world!');
-        }
-      }
+      // JSONBIN: https://api.jsonbin.io/v3/b/6923ce9ad0ea881f40fc1966
+      // Alternatively https://my-json-server.typicode.com/EthanLDot/jsonservertest/cars. I personally don't like my json server due because it takes longer to reflect changes to the DB and there's a very low limit on the # of fields per entry.
+      const loadRemoteBtn = document.getElementById('load-remote');
+      const url = "https://api.jsonbin.io/v3/b/692e3a5a43b1c97be9d1aa98";
+      let records = {}
+      loadRemoteBtn.addEventListener('click', async () => {
+          console.log("Load Remote clicked");
 
-      // Register the element. Name must include a hyphen.
-      customElements.define('hello-world', HelloWorld);
+          try {
+              // Attempt to get data from remote resource (I am use fetch in this case)
+              const response = await fetch(url);
+              if (!response.ok) {
+                  throw new Error(`Response status: ${response.status}`);
+              }
+
+              const jsonData = await response.json();
+              // if you use my json server make sure the .record part is removed
+              records = jsonData.record;
+
+              // go through each object (note arrays also work but this can become painful to work with when you implement crud operations)
+              Object.keys(records).forEach(key => {
+                  const card = records[key];
+
+                  //note this needs the my-component.js script  otherwise it can't map 'my-ride' to the right constructor
+                  window.projectCard = document.createElement("project-card");
+                  console.log(card);
+                  window.projectCard.setAttribute("anchor-url", `${card.anchor_url}`);
+                  window.projectCard.setAttribute("pic-src", `${card.pic_src}`);
+                  window.projectCard.setAttribute("pic-alt", `${card.pic_alt}`);
+                  window.projectCard.setAttribute("heading", `${card.heading}`);
+                  window.projectCard.setAttribute("keywords", `${card.keywords}`);
+                  window.projectCard.setAttribute("caption", `${card.caption}`);
+                  document.getElementById("projects-remote").appendChild(window.projectCard);
+              });
+
+          } catch (error) {
+              console.error(error.message);
+          }
+      });
+
+      const loadLocalBtn = document.getElementById('load-local');
+      let local_records = {}
+      loadLocalBtn.addEventListener('click', async () => {
+          console.log("Load Local clicked");
+
+          try {
+              // Attempt to get data from remote resource (I am use fetch in this case)
+              // if you use my json server make sure the .record part is removed
+              records = JSON.parse(localStorage.getItem('local_record'));
+
+              // go through each object (note arrays also work but this can become painful to work with when you implement crud operations)
+              Object.keys(records).forEach(key => {
+                  const card = records[key];
+
+                  //note this needs the my-component.js script  otherwise it can't map 'my-ride' to the right constructor
+                  window.projectCard = document.createElement("project-card");
+                  console.log(card);
+                  window.projectCard.setAttribute("anchor-url", `${card.anchor_url}`);
+                  window.projectCard.setAttribute("pic-src", `${card.pic_src}`);
+                  window.projectCard.setAttribute("pic-alt", `${card.pic_alt}`);
+                  window.projectCard.setAttribute("heading", `${card.heading}`);
+                  window.projectCard.setAttribute("keywords", `${card.keywords}`);
+                  window.projectCard.setAttribute("caption", `${card.caption}`);
+                  document.getElementById("projects-local").appendChild(window.projectCard);
+              });
+
+          } catch (error) {
+              console.error(error.message);
+          }
+      });
     </script>
     <script>
 if (document.startViewTransition) {
