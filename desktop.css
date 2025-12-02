@@ -315,12 +315,14 @@ body {
                 padding-inline: calc(2*var(--width-spacing-unit,1.6dvw));
                 padding-block: var(--height-spacing-unit,1.6dvh);
                 border: var(--border-width,0.5px) solid var(--border-color,#121313);
+                flex: 1;
 
                 div {
                     padding-block: var(--height-spacing-unit,1.6dvh);
-                    display: flex;
-                    column-gap: calc(2*var(--width-spacing-unit,1.6dvw));
-                    row-gap: var(--height-spacing-unit,1.6dvh);                
+                    display: grid;
+                    grid-template-columns: repeat(2,1fr);
+                    grid-column-gap: var(--width-spacing-unit,1.6dvw);
+                    grid-row-gap: calc(2*var(--height-spacing-unit,1.6dvh));             
                 }
             }
 
