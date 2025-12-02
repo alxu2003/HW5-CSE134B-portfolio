@@ -24,10 +24,8 @@ class projectCard extends HTMLElement {
             <a href= ${anchorURL}>
               <article>
                 <picture>
-                    <source media="(max-width: 768px)" srcset="${picSrc}-0.5x.png">
-                    <source media="(min-width: 769px) and (max-width: 1024px)" srcset="${picSrc}-0.75x.png">
-                    <source media="(min-width: 1025px)" srcset="${picSrc}-2x.png">
-                    <img src="${picSrc}-2x.png" alt="${picAlt}" width="400" >
+                    <source media="(min-width: 1025px)" srcset="${picSrc}">
+                    <img src="${picSrc}" alt="${picAlt}" width="400" >
                 </picture>
                 <hgroup>
                   <h2>${heading}</h2>
