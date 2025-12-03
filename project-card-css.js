@@ -24,7 +24,7 @@ export function projectCardCSS() {
                 width: 100%;
                 }
                 overflow: hidden;
-                height: 28vh;
+                height: 18vw;
                 }
 
                 hgroup {
