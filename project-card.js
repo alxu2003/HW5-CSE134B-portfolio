@@ -10,11 +10,11 @@ class projectCard extends HTMLElement {
         style.textContent = projectCardCSS();
 
         const anchorURL = this.getAttribute('anchor-url') || '';
-        const picSrc = this.getAttribute('pic-src') !== "undefined" ? this.getAttribute('pic-src') : 'undefined';
-        const picAlt = this.getAttribute('pic-alt') !== "undefined" ? this.getAttribute('pic-alt') : 'A picture of a UX design project';
-        const heading = this.getAttribute('heading') !== "undefined" ? this.getAttribute('heading') : 'No heading provided';
-        const keywords = this.getAttribute('keywords') !== "undefined" ? this.getAttribute('keywords') : 'undefined';
-        const caption = this.getAttribute('caption') !== "undefined" ? this.getAttribute('caption') : 'No details provided.';;
+        const picSrc = this.getAttribute('pic-src') ? this.getAttribute('pic-src') : 'undefined';
+        const picAlt = this.getAttribute('pic-alt') ? this.getAttribute('pic-alt') : 'A picture of a UX design project';
+        const heading = this.getAttribute('heading') ? this.getAttribute('heading') : 'No heading provided';
+        const keywords = this.getAttribute('keywords') ? this.getAttribute('keywords') : 'undefined';
+        const caption = this.getAttribute('caption') ? this.getAttribute('caption') : 'No details provided.';;
 
         const keywordSpans = keywords !== 'undefined' 
             ? keywords.split(',').map(kw => `<span>${kw.trim()}</span>`).join('')
