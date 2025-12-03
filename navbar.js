@@ -29,7 +29,8 @@ navSwitch.addEventListener('input', () => {
     navSwitch.checked ? navBar.style.width = '32dvw' : navBar.style.width = 'var(--nav-short-end-size)';
 })
 
-localStorage.setItem('local_record',`{
+if(!localStorage.getItem('setup_complete')) {
+  localStorage.setItem('local_record',`{
   "storybook": {
     "anchor_url": "storybook_case_study.html",
     "pic_src": "./images/home/StorybookThumb-2x.png",
@@ -94,4 +95,7 @@ localStorage.setItem('local_record',`{
     "keywords": "Product Design",
     "caption": "Moral tester is an app that lets users know what type of morals they have concerning self driving cars"
   }
-}`);
+}`);  
+  localStorage.setItem('setup_complete', 'true');
+}
+
