@@ -24,28 +24,63 @@ form {
         flex-direction: column;
         gap: calc(0.6*var(--height-spacing-unit,1.6dvh));
     }
+    .radio-group {
+        display: flex;
+        flex-direction: row;
+        gap: calc(2*var(--width-spacing-unit,1.6dvw));
+        margin-block: calc(0.5*var(--height-spacing-unit,1.6dvh));
+
+        span {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        input {
+            margin: 0;
+        }
+        
+        input[type="radio"]:focus {
+            border: none;
+            outline: none;
+        }
+    }
+
+    .radio-group:has(#create:checked) ~ .create,
+    .radio-group:has(#create:checked) ~ .create-update {
+        display: flex;
+    }
+
+    .radio-group:has(#update:checked) ~ .update-delete,
+    .radio-group:has(#update:checked) ~ .create-update {
+        display: flex;
+    }
+
+    .radio-group:has(#delete:checked) ~ .update-delete {
+        display: flex;
+    }
 
     fieldset {
         border: none;
         display: flex;
         flex-direction: column;
-        gap: calc(0.8*var(--height-spacing-unit,1.6dvh));
+        gap: calc(2*var(--height-spacing-unit,1.6dvh));
         padding: 0;
 
         legend {
             margin-block: calc(1*var(--height-spacing-unit,1.6dvh));
         }
 
-        div {
-            display: flex;
-            flex-direction: row;
-            gap: calc(1*var(--width-spacing-unit,1.6dvw));
-        }
-
         legend {
             padding: 0;
         }
     }
+
+    .update-delete, .create, .create-update {
+        display: none;
+    }
+
+    
 
     input[type="text"], input[type="email"], textarea {
         padding: calc(0.5*var(--height-spacing-unit,1.6dvh));
