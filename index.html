@@ -19,9 +19,8 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <!-- <li><a href="about_me.html">About me</a></li> -->
-        <!-- <li><a href="experiment.html">Experiments</a></li> -->
-        <!-- <li><a href='form-no-js.html'>Form-no-js</a></li> -->
-        <li><a href='form-with-js.html'>Form-with-js</a></li>
+        <li><a href='crud-form.html'>CRUD Form</a></li>
+        <li><a href='form-with-js.html'>Form with JS</a></li>
       </ul>
       <div id="load-btns">
           <button id="load-remote"><h3>Load Remote</h3></button>
@@ -139,11 +138,11 @@
           try {
               // Attempt to get data from remote resource (I am use fetch in this case)
               // if you use my json server make sure the .record part is removed
-              records = JSON.parse(localStorage.getItem('local_record'));
+              local_records = JSON.parse(localStorage.getItem('local_record'));
 
               // go through each object (note arrays also work but this can become painful to work with when you implement crud operations)
-              Object.keys(records).forEach(key => {
-                  const card = records[key];
+              Object.keys(local_records).forEach(key => {
+                  const card = local_records[key];
 
                   //note this needs the my-component.js script  otherwise it can't map 'my-ride' to the right constructor
                   window.projectCard = document.createElement("project-card");
