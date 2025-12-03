@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroller">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>CRUD Form</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="mobile.css" />
+    <link rel="stylesheet" media="screen and (min-width: 769px) and (max-width: 1024px)" href="tablet.css" />
+    <link rel="stylesheet" media="screen and (min-width: 1025px)" href="desktop.css" />
+    <link rel="stylesheet" href="form.css" />
+	<script type="text/javascript" src="navbar.js" defer></script>
+  </head>
+  <body>
+    <nav id="navbar">
+			
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <!-- <li><a href="about_me.html">About me</a></li> -->
+        <!-- <li><a href="experiment.html">Experiments</a></li> -->
+        <!-- <li><a href='form-no-js.html'>Form-no-js</a></li> -->
+        <li><a href='form-with-js.html'>Form-with-js</a></li>
+      </ul>
+      <div id="closed-nav">
+        <label id="nav-button">
+          <input id="nav-check" type="checkbox">
+          <svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 8H24V10.6667H0V8ZM0 14.6667H24V17.3333H0V14.6667ZM0 21.3333H24V24H0V21.3333Z" fill="var(--border-color)"/>
+          </svg>
+        </label>
+      
+        <div id="theme-switch">
+          <svg id = "sun" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" stroke="var(--border-color)" stroke-width="1.5"/>
+            <path d="M12 2V3M12 21V22M22 12H21M3 12H2M19.07 4.93L18.678 5.323M5.322 18.678L4.929 19.071M19.07 19.07L18.678 18.677M5.322 5.322L4.929 4.929" stroke="var(--border-color)" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <svg id = "moon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.0004 3.5C10.3542 3.49993 8.74336 3.97789 7.36362 4.87582C5.98388 5.77375 4.89456 7.05302 4.22799 8.55822C3.56142 10.0634 3.34628 11.7298 3.6087 13.355C3.87111 14.9801 4.5998 16.4941 5.70624 17.713C6.81268 18.9319 8.24927 19.8033 9.8415 20.2214C11.4337 20.6394 13.1131 20.5861 14.6756 20.0679C16.2381 19.5497 17.6166 18.589 18.6435 17.3023C19.6704 16.0157 20.3015 14.4585 20.4604 12.82C20.4694 12.7221 20.4494 12.6238 20.4028 12.5372C20.3563 12.4506 20.2852 12.3797 20.1986 12.3333C20.1119 12.2869 20.0135 12.267 19.9157 12.2762C19.8178 12.2854 19.7248 12.3232 19.6484 12.385C19.1316 12.8032 18.5366 13.1141 17.8982 13.2996C17.2598 13.4851 16.5908 13.5414 15.9304 13.4652C15.27 13.3891 14.6314 13.182 14.052 12.8561C13.4726 12.5302 12.9639 12.0921 12.5559 11.5672C12.1478 11.0424 11.8485 10.4415 11.6755 9.79962C11.5024 9.15775 11.4591 8.48782 11.5481 7.82901C11.6371 7.1702 11.8565 6.53575 12.1936 5.96277C12.5307 5.38978 12.9787 4.88978 13.5114 4.492C13.5904 4.43295 13.6502 4.35183 13.6832 4.25886C13.7163 4.1659 13.7211 4.06523 13.697 3.96955C13.6729 3.87386 13.6211 3.78743 13.548 3.72114C13.475 3.65485 13.3839 3.61166 13.2864 3.597C12.8607 3.53253 12.4308 3.5001 12.0004 3.5Z" fill="var(--border-color)"/>
+          </svg>
+          <label class="switch">
+            <input id="theme-check" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content">
+      <main>
+        <section data-page="contact-form">
+          <hgroup>
+            <h2>Create, update, delete</h2>
+            <p>Start by selecting which action you want to take</p>
+          </hgroup>
+          <form id='crud-form' action="https://httpbin.org/post" method="post" enctype="application/x-www-form-urlencoded">
+            <h3>CRUD Form</h3>
+            <span class="radio-group">      
+                
+                <span>
+                    <input 
+                    type="radio" 
+                    id="create" 
+                    name="crud-action" 
+                    />
+                    <label for="create">Create</label>
+                </span>
+                <span>
+                    <input 
+                    type="radio" 
+                    id="update"
+                    name="crud-action"
+                    />
+                    <label for="update">Update</label>
+                </span>
+                <span>
+                    <input 
+                    type="radio" 
+                    id="delete"
+                    name="crud-action"
+                    />
+                    <label for="delete">Delete</label>                      
+                </span>
+            </span>
+
+            <fieldset class="update-delete">
+                <label for="existing-key">
+                    <p>Select existing object:</p>
+                    <select id="existing-key" name="existing-key">
+                        <option value="" disabled selected>Select an object</option>
+                    </select>
+                </label>
+            </fieldset>
+
+            <fieldset class="create">
+                <label for="key">
+                    <p>Name of object (REQUIRED):</p>
+                    <input 
+                    type="text" 
+                    id="key" 
+                    name="key" 
+                    >
+                </label>
+            </fieldset>
+
+            <fieldset class="create-update">
+                <label for="anchor-url">
+                    <p>Anchor URL:</p>
+                    <input 
+                    type="url" 
+                    id="anchor-url" 
+                    name="anchor-url"
+                    >
+                </label>
+                <label for="pic-src">
+                    <p>Picture source URL:</p>
+                    <input 
+                    type="url" 
+                    id="pic-src" 
+                    name="pic-src"
+                    >
+                </label>
+                <label for="pic-alt">
+                    <p>Picture alt text:</p>
+                    <input 
+                    type="text" 
+                    id="pic-alt" 
+                    name="pic-alt"
+                    >
+                </label>
+                <label for="heading">
+                    <p>Heading text:</p>
+                    <input 
+                    type="text" 
+                    id="heading" 
+                    name="heading"
+                    >
+                </label>
+                <label for="keywords">
+                    <p>Keywords (comma separated):</p>
+                    <input 
+                    type="text" 
+                    id="keywords" 
+                    name="keywords"
+                    placeholder="2023, Product Design, CX"
+                    >
+                </label>
+                <label for="caption">
+                    <p>Caption text:</p>
+                    <input 
+                    type="text" 
+                    id="caption" 
+                    name="caption"
+                    >
+                </label>
+            </fieldset>
+            
+            
+            
+            <input type="hidden" name="possible_bot" value="true">
+            <input type="hidden" name="form-errors" id="form-errors">
+            
+            <input type="submit" value="Submit" id="submit">
+          </form>
+        </section>
+      </main>
+      <footer>
+        <nav>
+          <ul>
+            <li><a href="/images/AlexXuResume2025.pdf" target="_blank">Resume</a></li>
+            <li><a href="https://www.linkedin.com/in/alex-liaoxing-xu/" target="_blank">Linkedin</a></li>
+            <li><a href="mailto:alxu2003@gmail.com">Email</a></li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+    <script>
+        document.getElementById('existing-key').addEventListener('click', function() {
+            if(this.children.length == 1){
+                try {
+                    local_records = JSON.parse(localStorage.getItem('local_record'));
+                    console.log(local_records);
+                    Object.keys(local_records).forEach(key => {
+                        window.option = document.createElement('option');
+                        option.value = key;
+                        option.textContent = key;
+                        document.getElementById('existing-key').appendChild(option);
+                    });
+                }
+                catch (error) {
+                    console.error(error.message);
+                }
+            }
+        })
+        document.getElementById('crud-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            // add your custom submission logic here
+            console.log('Form submitted');
+            if(document.getElementById('delete').checked){
+                //delete logic
+                let local_records = JSON.parse(localStorage.getItem('local_record'));
+                let keyToDelete = document.getElementById('existing-key').value;
+                delete local_records[keyToDelete];
+                localStorage.setItem('local_record', JSON.stringify(local_records));
+                alert(`Deleted object: ${keyToDelete}`);
+            } else if(document.getElementById('update').checked){
+                //update logic
+                let local_records = JSON.parse(localStorage.getItem('local_record'));
+                let keyToUpdate = document.getElementById('existing-key').value;
+            
+                local_records[keyToUpdate] = {
+                    "anchor_url": document.getElementById('anchor-url').value ? document.getElementById('anchor-url').value : local_records[keyToUpdate]["anchor_url"],
+                    "pic_src": document.getElementById('pic-src').value ? document.getElementById('pic-src').value : local_records[keyToUpdate]["pic_src"],
+                    "pic_alt": document.getElementById('pic-alt').value ? document.getElementById('pic-alt').value : local_records[keyToUpdate]["pic_alt"],
+                    "heading": document.getElementById('heading').value ? document.getElementById('heading').value : local_records[keyToUpdate]["heading"],
+                    "keywords": document.getElementById('keywords').value ? document.getElementById('keywords').value : local_records[keyToUpdate]["keywords"],
+                    "caption": document.getElementById('caption').value ? document.getElementById('caption').value : local_records[keyToUpdate]["caption"]
+                };
+                localStorage.setItem('local_record', JSON.stringify(local_records));
+                alert(`Updated object: ${keyToUpdate}`);
+            } else if(document.getElementById('create').checked){
+                //create logic
+                let local_records = JSON.parse(localStorage.getItem('local_record')) || {};
+                let newKey = document.getElementById('key').value;
+                local_records[newKey] = {
+                    "anchor_url": document.getElementById('anchor-url').value,
+                    "pic_src": document.getElementById('pic-src').value,
+                    "pic_alt": document.getElementById('pic-alt').value,
+                    "heading": document.getElementById('heading').value,
+                    "keywords": document.getElementById('keywords').value,
+                    "caption": document.getElementById('caption').value
+                };
+                localStorage.setItem('local_record', JSON.stringify(local_records));
+                alert(`Created object: ${newKey}`);
+            }
+        });
+    </script>
+  </body>
+</html>
