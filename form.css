@@ -10,7 +10,7 @@ section[data-page="contact-form"] {
 
 form {
     width: 40%;
-    border: calc(2*var(--border-width,1px)) solid var(--border-color,#121313);
+    border: var(--border-width,1px) solid var(--border-color,#121313);
     border-radius: 16px;
     padding-inline: calc(2*var(--width-spacing-unit,1.6dvw));
     padding-block: calc(2*var(--height-spacing-unit,1.6dvh));

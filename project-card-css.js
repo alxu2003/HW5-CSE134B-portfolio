@@ -18,7 +18,7 @@ export function projectCardCSS() {
                 
                 picture {
                 transition: transform 0.3s ease;
-                border: calc(2*var(--border-width)) solid var(--border-color);
+                border: var(--border-width) solid var(--border-color);
                 border-radius: 16px;
                 img{
                 width: 100%;

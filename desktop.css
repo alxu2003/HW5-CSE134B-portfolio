@@ -43,7 +43,7 @@ body {
     #navbar {
         width: var(--nav-short-end-size);
         height: 100vh;
-        border-right: calc(2*var(--border-width,0.5px)) solid var(--border-color,#121313);
+        outline: var(--border-width) solid var(--border-color,#121313);
         position: fixed;
         box-sizing: border-box;
         background-color: var(--nav-bg-color);
@@ -87,7 +87,8 @@ body {
                 text-wrap: nowrap;
                 justify-content: center;
                 background-color: transparent;
-                border: 1px solid var(--border-color,#121313);
+                outline: 1px solid var(--border-color,#121313);
+                border: none;
                 padding-inline: calc(1*var(--width-spacing-unit));
                 padding-block: calc(0.5*var(--height-spacing-unit));
                 border-radius: 4px;
@@ -106,7 +107,7 @@ body {
             padding-block: calc(0.6*var(--height-spacing-unit));
             box-sizing: border-box;
             width: var(--nav-short-end-size);
-            border-right: var(--border-width,0.5px) solid var(--border-color,#121313);
+            outline: var(--border-width,0.5px) solid var(--border-color,#121313);
             display: flex;
             align-items: center;
             flex-flow: column nowrap;
@@ -189,18 +190,18 @@ body {
 
                     input:checked + .slider {
                         background-color: var(--nav-bg-color);
-                        border: calc(2*var(--border-width)) solid var(--border-color);
+                        outline: var(--border-width) solid var(--border-color);
                     }
 
                     input:checked + .slider:before {
-                        transform: translateY(-132%);
+                        transform: translateY(-120%);
                         background-color: var(--border-color);
                     }
 
                     /* Rounded sliders */
                     .slider.round {
                         border-radius: var(--width-spacing-unit);
-                        border: calc(2*var(--border-width)) solid var(--border-color);
+                        outline: var(--border-width) solid var(--border-color);
                     }
 
                     .slider.round:before {
@@ -238,7 +239,7 @@ body {
 
         figure {
             margin: 0;
-            border: var(--border-width,0.5px) solid var(--border-color,#121313);
+            outline: var(--border-width,0.5px) solid var(--border-color,#121313);
 
             img {
                 width: 100%;
@@ -254,7 +255,7 @@ body {
             display: flex;
             justify-content: flex-start;
             align-items: flex-end;
-            border: var(--border-width,0.5px) solid var(--border-color,#121313);
+            outline: calc(0.5*var(--border-width,0.5px)) solid var(--border-color,#121313);
         }
 
         header[data-page="case-study"] {
@@ -329,7 +330,7 @@ body {
             section {
                 padding-inline: calc(2*var(--width-spacing-unit,1.6dvw));
                 padding-block: var(--height-spacing-unit,1.6dvh);
-                border: var(--border-width,0.5px) solid var(--border-color,#121313);
+                outline: calc(0.5*var(--border-width,1px)) solid var(--border-color,#121313);
                 flex: 1;
 
                 div {
@@ -351,7 +352,7 @@ body {
                     ". h2 h2 h2 h2 h2 . . . . . ."
                     ". p p p p . . . . . . ."
                     ". strong strong . . . . . . . . .";
-                border: none;
+                outline: none;
                 h2 {
                     grid-area: h2;
                 }
@@ -377,7 +378,7 @@ body {
 
                 padding-inline: calc(2*var(--width-spacing-unit,1.6dvw));
                 padding-block: var(--height-spacing-unit,1.6dvh);
-                border: none;
+                outline: none;
 
                 img {
                     grid-area: img;
@@ -393,13 +394,14 @@ body {
         }
 
         main[data-page="case-study"] {
-            border: var(--border-width,0.5px) solid var(--border-color,#121313);
+            outline: calc(0.5*var(--border-width,0.5px)) solid var(--border-color,#121313);
         }
         
         footer {
             padding-inline: calc(2*var(--width-spacing-unit,1.6dvw));
             padding-block: calc(1.5*var(--height-spacing-unit,1.6dvh));
-            border: var(--border-width,0.5px) solid var(--border-color,#121313);
+            outline: calc(0.5*var(--border-width,1px)) solid var(--border-color,#121313);
+
             nav ul {
                 display: flex;
                 gap: 40px;
