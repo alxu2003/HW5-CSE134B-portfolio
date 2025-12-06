@@ -18,6 +18,11 @@
     --width-spacing-unit: 1.6dvw;
     --height-spacing-unit: 1.6dvh;
 
+     @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait),
+            (max-width: 768px) {
+        --nav-short-end-size: 4dvh;
+    }
+
     @font-face {
         font-family: 'Roboto';
         /* The src declaration points to your single font file */
